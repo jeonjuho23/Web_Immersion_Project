@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- DI with Setter -->
+    <!-- calculator -->
+    <bean id="calculator" class="com.example.springdemo.di.setter.ex.Calculator" />
+    <bean id="myCalculator" class="com.example.springdemo.di.setter.ex.MyCalculator" >
+        <property name="calculator">
+            <ref bean="calculator" />
+        </property>
+        <property name="firstNum" value="10" />
+        <property name="secondNum" value="2" />
+    </bean>
+    <!-- bmi calculator -->
+    <bean id="bmiCalculator" class="com.example.springdemo.di.setter.ex.BMICalculator">
+        <property name="obesity" value="40" />
+        <property name="overWeight" value="30" />
+        <property name="normal" value="20" />
+        <property name="lowWeight" value="10" />
+    </bean>
+    <bean id="myInfo" class="com.example.springdemo.di.setter.ex.MyInfo" >
+        <property name="bmiCalculator">
+            <ref bean="bmiCalculator" />
+        </property>
+        <property name="name">
+            <value>홍길동</value>
+        </property>
+        <property name="height">
+            <value>187.0</value>
+        </property>
+        <property name="weight">
+            <value>84.0</value>
+        </property>
+        <property name="hobbys">
+            <list>
+                <value>수영</value>
+                <value>요리</value>
+                <value>독서</value>
+            </list>
+
+        </property>
+    </bean>
+
+    <!-- DI with Constructor -->
+    <bean id="studentInfo" class="com.example.springdemo.di.constructor.ex.StudentInfo">
+        <constructor-arg ref="student"/>
+    </bean>
+    <bean id="student" class="com.example.springdemo.di.constructor.ex.Student">
+        <constructor-arg value="홍길동" />
+        <constructor-arg value="10살" />
+        <constructor-arg value="3학년" />
+        <constructor-arg value="2반" />
+    </bean>
+    <bean id="student2" class="com.example.springdemo.di.constructor.ex.Student">
+        <constructor-arg value="홍길순" />
+        <constructor-arg value="8살" />
+        <constructor-arg value="1학년" />
+        <constructor-arg value="1반" />
+    </bean>
+
+    <!-- binding -->
+    <bean id="pencil" class="com.example.springdemo.di.binding.ex.Pencil6BwithEraser"/>
+
+
+</beans>

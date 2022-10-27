@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+        profile="dev">
+
+    <bean id="serverInfo" class="com.example.springdemo.bean.annotation.property.many.ex.ServerInfo">
+        <constructor-arg value="123.456.789.00"/>
+        <constructor-arg value="80"/>
+    </bean>
+</beans>

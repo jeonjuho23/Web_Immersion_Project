@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    <context:annotation-config />-->
+<!--    <bean class="use.xml.com.example.springdemo.bean.annotation.ApplicationConfig"/>-->
+
+    <bean id="student3" class="com.example.springdemo.bean.annotation.xml.use.Student">
+        <constructor-arg value="홍길순"/>
+        <constructor-arg value="30"/>
+        <constructor-arg>
+            <list>
+                <value>마라톤</value>
+                <value>요리</value>
+            </list>
+        </constructor-arg>
+        <property name="height" value="190"/>
+        <property name="weight" value="80"/>
+    </bean>
+
+</beans>

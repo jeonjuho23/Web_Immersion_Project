@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--     use annotation        -->
+
+    <aop:aspectj-autoproxy/>
+    <bean id="logAop" class="com.example.springdemo.aop.annotation.use.ex.LogAop"/>
+
+    <bean id="studentker" class="com.example.springdemo.aop.annotation.use.ex.Student">
+        <constructor-arg value="student" />
+        <constructor-arg value="25" />
+        <constructor-arg value="2" />
+        <constructor-arg value="5" />
+    </bean>
+
+    <bean id="worker" class="com.example.springdemo.aop.annotation.use.ex.Worker">
+        <constructor-arg value="worker" />
+        <constructor-arg value="30"/>
+        <constructor-arg value="developer" />
+    </bean>
+
+
+    <!--        no use annotation         -->
+
+    <!--    <bean id="logAop" class="com.example.springdemo.aop.annotation.nouse.ex.LogAop" />-->
+<!--    <aop:config>-->
+<!--        <aop:aspect id="logAop" ref="logAop" >-->
+<!--            <aop:pointcut id="publicM" expression="within(com.example.springdemo.aop.annotation.nouse.ex.Student)"/>-->
+<!--            <aop:around pointcut-ref="publicM" method="loggeerAop" />-->
+<!--            <aop:after method="afterAdvice" pointcut-ref="publicM"/>-->
+<!--            <aop:after-throwing method="afterThrowingAdvice" pointcut-ref="publicM"/>-->
+<!--            <aop:after-returning method="afterReturningAdvice" pointcut-ref="publicM"/>-->
+<!--            <aop:before method="beforeAdvice" pointcut-ref="publicM" />-->
+<!--        </aop:aspect>-->
+<!--        <aop:aspect id="logAop" ref="logAop">-->
+<!--            <aop:pointcut id="publicM" expression="within(com.example.springdemo.aop.annotation.nouse.ex.Student)"/>-->
+<!--            <aop:before method="beforeAdvice" pointcut-ref="publicM" />-->
+<!--        </aop:aspect>-->
+<!--        <aop:aspect id="logAop" ref="logAop">-->
+<!--            <aop:pointcut id="publicM" expression="within(com.example.springdemo.aop.annotation.nouse.ex.Student)"/>-->
+<!--            <aop:before method="afterAdvice" pointcut-ref="publicM" />-->
+<!--        </aop:aspect>-->
+<!--        <aop:aspect id="logAop" ref="logAop">-->
+<!--            <aop:pointcut id="publicM" expression="within(com.example.springdemo.aop.annotation.nouse.ex.Student)"/>-->
+<!--            <aop:before method="afterReturningAdvice" pointcut-ref="publicM" />-->
+<!--        </aop:aspect>-->
+<!--        <aop:aspect id="logAop" ref="logAop">-->
+<!--            <aop:pointcut id="publicM" expression="within(com.example.springdemo.aop.annotation.nouse.ex.Student)"/>-->
+<!--            <aop:before method="afterThrowingAdvice" pointcut-ref="publicM" />-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+
+
+<!--    <bean id="student" class="com.example.springdemo.aop.annotation.nouse.ex.Student">-->
+<!--        <constructor-arg value="student" />-->
+<!--        <constructor-arg value="25" />-->
+<!--        <constructor-arg value="2" />-->
+<!--        <constructor-arg value="5" />-->
+<!--    </bean>-->
+
+<!--    <bean id="worker" class="com.example.springdemo.aop.annotation.nouse.ex.Worker">-->
+<!--        <constructor-arg value="worker" />-->
+<!--        <constructor-arg value="30"/>-->
+<!--        <constructor-arg value="developer" />-->
+<!--    </bean>-->
+
+</beans>
