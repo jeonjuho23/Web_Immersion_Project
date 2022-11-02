@@ -1,4 +1,4 @@
-package com.example.springmvc;
+package com.example.spring.mvc;
 
 import java.io.*;
 
