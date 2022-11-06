@@ -101,36 +101,36 @@ public class ViewController {
 //        return "board/view";
 //    }
 
+//
+//    @RequestMapping(value = "/studentForm", method = RequestMethod.GET)
+//    public String studentForm() {
+//        return "student/createPage";
+//    }
+//
+//    @RequestMapping(value = "/student/create", method = RequestMethod.GET)
+//    public String studentCreate(@ModelAttribute("student") Student student, BindingResult bindingResult) {
+//
+//        // 유효성 검사를 통과하면 이동할 페이지
+//        String page = "student/createDone";
+//
+////        // 유효성 검사
+////        StudentValidator validator = new StudentValidator();
+////        validator.validate(student, bindingResult);
+//
+//        // 유효성 검사 실패 시 이동할 페이지
+//        if (bindingResult.hasErrors()) {
+//            page = "redirect:/board/studentForm";
+//        }
+//
+//        // 페이지 이동
+//        return page;
+//    }
 
-    @RequestMapping(value = "/studentForm", method = RequestMethod.GET)
-    public String studentForm() {
-        return "student/createPage";
-    }
 
-    @RequestMapping(value = "/student/create", method = RequestMethod.GET)
-    public String studentCreate(@ModelAttribute("student") Student student, BindingResult bindingResult) {
-
-        // 유효성 검사를 통과하면 이동할 페이지
-        String page = "student/createDone";
-
-//        // 유효성 검사
-//        StudentValidator validator = new StudentValidator();
-//        validator.validate(student, bindingResult);
-
-        // 유효성 검사 실패 시 이동할 페이지
-        if (bindingResult.hasErrors()) {
-            page = "redirect:/board/studentForm";
-        }
-
-        // 페이지 이동
-        return page;
-    }
-
-
-    @InitBinder
-    protected void initBinder(WebDataBinder binder) {
-        binder.setValidator(new StudentValidator());
-    }
+//    @InitBinder
+//    protected void initBinder(WebDataBinder binder) {
+//        binder.setValidator(new StudentValidator());
+//    }
 
 
 
