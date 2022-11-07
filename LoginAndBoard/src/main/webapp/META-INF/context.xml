@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/">
+    <Resource name="jdbc/Oracle11g" auth="Container"
+
+              type="javax.sql.DataSource"
+
+              factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+
+              initialSize="2" minIdle="2" maxTotal="5" maxIdle="5"
+
+              maxWaitMillis="3000" driverClassName="oracle.jdbc.OracleDriver"
+
+              url="jdbc:oracle:thin:@localhost:1521:xe"
+
+              username="hr" password="1234" removeAbandonedOnBorrow="true"
+
+              removeAbandonedTimeout="60" />
+</Context>
